@@ -18,7 +18,7 @@ root
 该CMakeLists兼容了各种操作系统，各种编译器
 
 ## CMake版本兼容——策略的使用
------------------------------
+
 cmake_minimum_required(VERSION 3.1.2 FATAL_ERROR)
 
 if (POLICY CMP0054)
@@ -30,7 +30,7 @@ endif()
 if (POLICY CMP0075)
     cmake_policy(SET CMP0075 NEW)
 endif()
------------------------------
+
 每个新发布版本一般都会引入一些新的策略，每个策略都会有一个标识号，格式CMP<NNNN>的标识符，<NNNN>对应四个0到9的整数。
 每个策略都在文档中描述了OLD和NEW的行为，以及引入的原因
 ### 隐式设置策略
@@ -65,12 +65,12 @@ PUHS和POP必须成对出现
 
 
 ## 设置默认的构建类型——set default build type in CMakeLists.txt
------------------------------
+
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release
         CACHE STRING "Set build type to Debug or Release (default Release)" FORCE)
 endif()
------------------------------
+
 1、无效的设置CMAKE_BUILD_TYPE
 
 SET(CMAKE_BUILD_TYPE debug)
@@ -152,10 +152,10 @@ string(TIMESTAMP <output_variable> [<format_string>] [UTC])
 
 
 ## 设置生成库类型
------------------------------
+
 set(EVENT__LIBRARY_TYPE DEFAULT CACHE STRING
     "Set library type to SHARED/STATIC/BOTH (default SHARED for MSVC, otherwise BOTH)")
------------------------------
+
 
 ## list——列表操作
 
